@@ -6,10 +6,14 @@
     <title>Learn JavaScript</title>
     <script>
       // Code One
+      // Code One: It will not work because it won't find The element with id (el).
+      // The browser will read The HTML file line by line.
+      // And it will find this script element before the one which has the id (el).
       document.getElementById("el").style.color = "red";
     </script>
     <script>
       // Code Two
+      // Code Two: It will work because The event 'onload' executes immediately after the whole page has loaded.
       window.onload = function () {
         document.getElementById("el").style.color = "red";
       };
@@ -19,6 +23,7 @@
     <h1 id="el">Page Title</h1>
     <script>
       // Code Three
+      // Code Three: It will work because it exists at the end of the page before the closing body tag.
       document.getElementById("el").style.color = "red";
     </script>
   </body>
